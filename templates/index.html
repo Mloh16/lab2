@@ -11,6 +11,22 @@
     <link href="{{ url_for('static', filename='./css/index.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1>Hello, our simple regression model has predicted a home value of {{ pred }}!</h1>
+<h1>Our model features included the below, along with sample values</h1>
+
+<table style="width:100%">
+    {% for f in features %}
+  <tr>
+    <th>{{f}}</th>
+  </tr>
+    {% endfor %}
+
+    {% for s in feature_subs %}
+  <tr>
+    <td>{{s}}</td>
+  </tr>
+    {% endfor %}
+</table>
+
+<h1>Our simple regression model has predicted a home value of {{ regr_pred }}!</h1>
 </body>
 </html>
